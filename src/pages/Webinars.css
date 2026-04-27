@@ -1,0 +1,77 @@
+.webinars-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 24px 30px;
+  margin-bottom: 50px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  background: var(--bg-input);
+  padding: 0 15px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.search-icon {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.search-input {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.filter-tabs {
+  display: flex;
+  background: var(--bg-secondary);
+  padding: 5px;
+  border-radius: var(--radius-md);
+}
+
+.filter-tab {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+}
+
+.filter-tab:hover {
+  color: var(--primary);
+}
+
+.filter-tab.active {
+  background: var(--bg-primary);
+  color: var(--primary);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .webinars-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+  
+  .filter-tabs {
+    overflow-x: auto;
+    padding: 2px;
+  }
+  
+  .filter-tab {
+    padding: 8px 15px;
+    white-space: nowrap;
+  }
+}

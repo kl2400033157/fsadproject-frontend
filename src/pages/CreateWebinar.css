@@ -1,0 +1,50 @@
+/* ========================================
+   Create Webinar / Admin Forms
+   ======================================== */
+
+.create-form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-form {
+  padding: 32px;
+  margin-top: 24px;
+}
+
+/* Row layouts for form groups */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.form-actions .btn {
+  min-width: 140px;
+}
+
+@media (max-width: 640px) {
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+  .form-actions .btn {
+    width: 100%;
+  }
+}

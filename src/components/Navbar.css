@@ -1,0 +1,196 @@
+/* ========================================
+   Navbar — Glassmorphism Navigation
+   ======================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  min-width: 280px;
+  overflow: visible;
+}
+.brand-icon {
+  font-size: 1.5rem;
+}
+.brand-text {
+  color: var(--primary);
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  transition: all var(--duration) var(--ease);
+}
+.nav-link:hover {
+  color: var(--text-primary) !important;
+  background: var(--bg-glass);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration) var(--ease);
+  color: var(--text-primary);
+}
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  transform: rotate(15deg);
+}
+
+/* User section */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 12px;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+}
+.nav-user-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.nav-role-badge {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nav-role-badge.admin {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--primary-light);
+}
+.nav-role-badge.user {
+  background: rgba(167, 139, 250, 0.2);
+  color: var(--accent-light);
+}
+
+/* Auth buttons */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+/* Hamburger */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  position: relative;
+  transition: all 0.3s var(--ease);
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  left: 0;
+  transition: all 0.3s var(--ease);
+}
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+.hamburger.open { background: transparent; }
+.hamburger.open::before { transform: rotate(45deg); top: 0; }
+.hamburger.open::after { transform: rotate(-45deg); top: 0; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-links {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 8px;
+    transform: translateX(100%);
+    transition: transform 0.35s var(--ease);
+  }
+  .navbar-links.active {
+    transform: translateX(0);
+  }
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 1.05rem;
+  }
+  .nav-user {
+    flex-direction: column;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+  }
+  .nav-auth {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+  .nav-auth .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
