@@ -32,7 +32,7 @@ export default function AdminUsers() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token') || localStorage.getItem('adminToken');
-      const base = (import.meta.env.VITE_API_URL || 'http://localhost:8080/api').replace(/\/$/, '');
+      const base = (import.meta.env.VITE_API_URL || 'https://fsadproject-backend.onrender.com').replace(/\/$/, '');
       const url = base.endsWith('/api') ? base : `${base}/api`;
       const r = await fetch(`${url}/registrations/webinar/${id}`, {
         headers: { Authorization: `Bearer ${token}` }

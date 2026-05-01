@@ -5,7 +5,7 @@ import axios from 'axios';
  * In production, points to Render backend. In development, points to localhost.
  * CORS is configured on the backend to allow requests from this origin.
  */
-let API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
+let API_BASE_URL = import.meta.env.VITE_API_URL || 'https://fsadproject-backend.onrender.com/';
 
 // Ensure /api suffix exists
 if (!API_BASE_URL.endsWith('/api')) {

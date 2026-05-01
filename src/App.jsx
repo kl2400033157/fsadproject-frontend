@@ -28,7 +28,7 @@ import './App.css';
 function App() {
   useEffect(() => {
     // Keep backend alive on Render free tier (ping every 10 minutes)
-    const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://fsadproject-backend.onrender.com';
     const keepAlive = setInterval(() => {
       fetch(`${API_BASE}/health`)
         .catch(() => {});
