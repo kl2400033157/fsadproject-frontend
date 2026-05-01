@@ -25,7 +25,6 @@ export default function Register() {
   };
 
   const handleRequestOtp = async () => {
-    console.log("BUTTON CLICKED");
     if (!form.email || !form.email.includes('@')) {
       toast.error('Please enter a valid email address first.');
       return;
